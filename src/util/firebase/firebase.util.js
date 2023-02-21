@@ -1,4 +1,3 @@
-import userEvent from "@testing-library/user-event";
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
@@ -6,6 +5,10 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged
+
 
 } from 'firebase/auth';
 
@@ -76,4 +79,19 @@ const firebaseConfig = {
 
     return await createUserWithEmailAndPassword(auth, email, password);
 
+  }
+
+  export const signInAuthUserWithEmailAndPassword = async (email, password) => {
+    if (!email || !password) return;
+
+    return await signInWithEmailAndPassword(auth, email, password);
+
+  }
+
+  export const signOutUser = async () => {
+    await signOut(auth);
+  }
+
+  export const onAuthStateChangedListener = (callback) => {
+    return onAuthStateChanged(auth, callback);
   }
