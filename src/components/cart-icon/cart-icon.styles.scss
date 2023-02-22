@@ -11,13 +11,26 @@
       width: 45px;
       height: 45px;
     }
+
+    .count-container{
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #ec414a;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+
+
+    }
   
     .item-count {
       position: absolute;
       font-size: 15px;
-      bottom: 12px;
-      background-color: rgb(255, 255, 255);
-    border-radius: 50%;
+      color:rgb(255, 255, 255);
     }
   }
   
